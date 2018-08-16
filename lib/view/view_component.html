@@ -1,0 +1,16 @@
+<h1>Github Users</h1>
+
+Username: <input [(ngModel)]="usernameText">
+<button (click)="search()">search</button>
+
+<div *ngIf="foundProfile">
+
+    <p>Login Name: {{ json_response['login'] }} </p>
+    <p>Blog: {{ json_response['blog'] }} </p>
+    <p>Public Repos: {{ json_response['public_repos'] }} </p>
+    <p>Public Gists: {{ json_response['public_gists'] }} </p>
+
+</div>
+<div *ngIf="err">
+    <h1>No user with that username</h1>
+</div>
